@@ -3,11 +3,11 @@ import pandas as pd
 import mysql.connector
 
 def app():
-    conn = mysql.connector.connect( host="localhost",
-                                    port="3306",
-                                    user="root",
-                                    passwd="",
-                                    db="jantung"
+    conn = mysql.connector.connect( host=st.secrets["host"],
+                                    port=st.secrets["port"],
+                                    user=st.secrets["user"],
+                                    passwd=st.secrets["passwd"],
+                                    db=st.secrets["db"]
                                   )
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM jantunggg LIMIT 1,300")
